@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>OnlineFiveinaRow</title>
+        {% load staticfiles %}
+        <link href="{% static 'OnlineFiveinaRow/base_register_login.css' %}" rel="stylesheet" type="text/css">
+    </head>
+
+    <body class = "login_register">
+        <span class="site_head">Five in a Row</span>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

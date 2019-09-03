@@ -1,0 +1,131 @@
+.profile_me {
+	background-image: url(../images/profile_me_background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.site_head {
+	font-size: 70px;
+	font-family: Aroha;
+}
+
+.content {
+	position: absolute;
+	width: 1000px;
+	height: 700px;
+	left: 50%;
+	top: 20%;
+	margin-left: -500px;
+	margin-bottom: 100px;
+	font-family: Helv;
+
+	background-color: rgba(169,169,169,0.5);
+	border:0px solid rgba(240,255,255);
+ 	border-radius: 30px;
+}
+
+.title {
+	text-align: center;
+	font-size: 28px;
+	padding-top: 30px;
+	margin: 5px;
+}
+
+table {
+	padding-left: 150px;
+}
+
+#id_user_picture {
+	object-fit: cover;
+	width: 200px;
+	height: 200px;
+	object-position: 0 0;
+}
+
+.select_button {
+	position: absolute;
+    height: 30px;
+	width: 130px;
+    outline: none;
+    background-color: transparent;
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    opacity: 0;
+}
+
+.fake_button {
+	font-size: 20px;
+	color: black;
+	margin-top: 10px;
+	border-width: 0;
+	border-radius: 3px;
+	height: 30px;
+	width: 130px;
+	background-color: white;
+	text-align: center;
+}
+
+.file_button {
+	font-size: 20px;
+	color: black;
+	margin-top: 10px;
+	border-width: 0;
+	border-radius: 3px;
+	height: 30px;
+	width: 130px;
+}
+
+.text1 {
+	font-size: 20px;
+	color: black;
+	margin: 10px;
+}
+
+.text2 {
+	font-size: 25px;
+	text-align: center;
+}
+
+.link {
+	font-size: 20px;
+	color: black;
+	margin-top: 10px;
+	border-width: 0;
+	border-radius: 3px;
+	height: 30px;
+	width: 130px;
+}
+
+.recordarea{
+	width: 400px;
+	height: 500px;
+	background-color: rgba(169, 169, 169, 0.8);
+	border:0px solid rgba(240,255,255);
+ 	border-radius: 30px;
+	overflow: auto;
+	position: absolute;
+	top: 100px;
+	left:55%
+}
+
+.recordarea div{
+	width: 100%;
+	height: 20px;
+	text-align: center;
+}
+
+@font-face {
+    font-family: Aroha;
+    src: url(WCManoNegraBta.otf);
+    /*Imagination Station.ttf*/
+    font-weight: bold;
+    /*size: 30;*/
+    /*font-style: normal;*/
+    /*font-size:250%;*/
+}
+
+@font-face {
+	font-family: Helv;
+	src: url("Helvetica-Condensed-Thin_0.ttf") format('ttf');
+}

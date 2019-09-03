@@ -1,0 +1,32 @@
+{% extends "OnlineFiveinaRow/base_recordlist.html" %}
+
+{% block content %}
+		<!-- <form method='POST' action="{% url 'playchess'%}"> -->
+	<div class="desc_char">The winner is {{winner}}</div>
+	<br>
+	<div class="desc_char2">Game record is displayed on chessboard below.</div>
+	<div class="desc_char2"> You can check it later in your profile page.</div>
+	<div class="desc_char2">Go back to <a href="{% url 'room' board_id %}" id="id_backto_matchmaking" class="desc_char2">Matchmaking page.</a></div>
+	<br>
+
+	<script type="text/javascript">
+		var record_array = {{record_array}};
+  		rebuildboard();//调用js的函数
+   			// window.onload = function(){ 
+   			// for(i in record_array){
+   			// 	sleep(500);
+   			// 	rebuildcolor_test(record_array[i]);
+   			// } 
+   			
+
+   			// } 
+   			// $(window).load(function(){
+   		rebuildcolor();
+   			// })
+	</script>
+	<br>
+	<div class="desc_char2">Go back to <a href="{% url 'room' board_id %}" id="id_backto_matchmaking" class="desc_char2">Matchmaking page.</a></div>
+	<br><br><br>
+			<!-- {%csrf_token%} -->
+		<!-- </form> -->
+{% endblock %}

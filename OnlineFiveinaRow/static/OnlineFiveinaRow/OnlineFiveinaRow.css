@@ -1,0 +1,91 @@
+.chesspiece{
+/*    background-color:#FFE4B5;*/
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: #FFE4B5;
+    font-size:15px;
+    color:#FFE4B5;
+}
+
+
+
+.checkerboard th,td,tr{
+    background-color:#FFE4B5;
+    border: 1px solid black;
+}
+/*
+.content{
+	background-color: white;
+}
+*/
+
+
+.desc_char{
+	font-size:20px;
+	color:black;
+}
+
+a{
+	color:black;
+}
+
+.site_head{
+	font-size:70px;
+	font-family: Aroha;
+}
+/*version14*/
+.game{
+	background-image:url(../images/game_background.jpg);
+	background-repeat:no-repeat; 
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+	width:100%;
+	/*background-size:100% 100%;*/
+	/*-moz-background-size:100% 100%;*/
+}
+
+/*.left{
+	float:left;
+	align-items: center;
+}
+.middle{
+	float:middle;
+}
+.right{
+	float:right;
+}*/
+
+.content{
+	position: absolute;
+	left:50%;
+	transform: translate(-50%);
+	text-align: center;
+	font-family: Helv;
+}
+/*.out-table {
+	background-color: rgba(0,0,0,0);
+	border:0px;
+}*/
+
+button{
+	cursor: pointer;
+}
+
+@font-face {
+    font-family: Aroha;
+    src: url(WCManoNegraBta.otf);
+    /*Imagination Station.ttf*/
+    font-weight: bold;
+    /*size: 30;*/
+    /*font-style: normal;*/
+    /*font-size:250%;*/
+}
+
+
+@font-face {
+	font-family: Helv;
+	src: url("Helvetica-Condensed-Thin_0.ttf") format('ttf');
+}

@@ -1,0 +1,79 @@
+{% extends "OnlineFiveinaRow/base_room.html" %}
+{% block content %}
+    <p class="title">Room</p>
+    <table>
+        <tr>
+            <td class="td_profile">
+                {% if profile1 != "none" %}
+                    {% if profile1.picture %}
+                        <img id="id_user_picture" src="{% url 'photo' profile1.id %}" width="200px">
+                    {% else %}
+                        <img id="id_user_picture" src="/static/images/default_picture.png" width="200px">
+                    {% endif %}
+        
+                {% else %}
+                    <img id="id_user_picture" src="/static/images/default_picture.png" width="200px">
+                {% endif %}
+            </td>
+            <td class="td_obstacle">
+                <div class="obstacle"></div>
+            </td>
+            <td class="td_chessboard">
+                <img class="img" src="/static/images/chessboard.png">
+            </td>
+            <td class="td_obstacle">
+                <div class="obstacle"></div>
+            </td>
+            <td class="td_profile">
+                {% if profile2 != "none" %}
+                    {% if profile2.picture %}
+                        <img id="id_user_picture" src="{% url 'photo' profile2.id %}" width="200px">
+                    {% else %}
+                        <img id="id_user_picture" src="/static/images/default_picture.png" width="200px">
+                    {% endif %}
+                {% else %}
+                    <img id="id_user_picture" src="/static/images/default_picture.png" width="200px">
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {% if profile1 != "none" %}
+                    <p class="text1">{{profile1.username}}</p>
+                    <p class="text1">Number of Games: {{profile1.game_sum}}</p>
+                    <p class="text1">Win: {{profile1.win_sum}}</p>
+                {% else %}
+                    <p class="text1">Waiting</p> 
+                {% endif %}
+            </td>
+            <td>
+                <div class="obstacle"></div>
+            </td>
+            <td>
+                <form method="post">
+                    {% csrf_token %}
+                    {% if disabled == "true" %}
+                        <button name="ready_button" disabled>Ready</button>
+                    {% else %}
+                        <button name="ready_button">Ready</button>
+                    {% endif %}
+                    <br>
+                    <button name="quit_button">Quit</button>
+                </form>
+                <a href="{% url 'logout' %}" id="id_logout"><button>Logout</button></a>
+            </td>
+            <td>
+                <div class="obstacle"></div>
+            </td>
+            <td>
+                {% if profile2 != "none" %}
+                    <p class="text1">{{profile2.username}}</p>
+                    <p class="text1">Number of Games: {{profile2.game_sum}}</p>
+                    <p class="text1">Win: {{profile2.win_sum}}</p>
+                {% else %}
+                    <p class="text1">Waiting</p> 
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

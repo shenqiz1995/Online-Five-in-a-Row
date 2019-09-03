@@ -1,0 +1,95 @@
+.login_register {
+	background-image: url(../images/login_register_background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.site_head {
+	font-size: 70px;
+	font-family: Aroha;
+}
+
+.frame {
+	background-color: rgba(190,190,190,0.4);
+ 	width: 300px;
+ 	height: 350px;
+
+ 	border:0px solid rgba(240,255,255);
+ 	border-radius: 10%;
+ 	left:25%;
+ 	top:15%;
+ 	/*left:0;
+ 	right:0;*/
+ 	/*margin:auto;*/
+ 	position: absolute;
+ 
+ 	padding:10px;
+ 	/*text-align: center;*/
+
+ 	font-family: Helv;
+}
+
+.title {
+	text-align: center;
+	font-size: 28px;
+	margin: 5px;
+}
+
+.text1 {
+	font-size: 20px;
+}
+
+.text2 {
+	font-size: 20px;
+}
+
+.error {
+	font-size: 5px;
+	color: red;
+	margin: 1px;
+}
+
+.link {
+	color: black;
+}
+
+table {
+	text-align: left;
+	font-size: 25px;
+}
+
+th {
+	font-weight: normal;
+	font-family: Helv;
+}
+
+input {
+	height: 26px;
+	width: 150px;
+	font-size: 23px;
+	font-weight: normal;
+	font-family: Helv;
+}
+
+button {
+	font-size: 20px;
+	margin-left: 110px;
+	margin-top: 10px;
+	border-radius: 10px;
+}
+
+@font-face {
+    font-family: Aroha;
+    src: url(WCManoNegraBta.otf);
+    /*Imagination Station.ttf*/
+    font-weight: bold;
+    /*size: 30;*/
+    /*font-style: normal;*/
+    /*font-size:250%;*/
+}
+
+@font-face {
+	font-family: Helv;
+	src: url("Helvetica-Condensed-Thin_0.ttf") format('ttf');
+}

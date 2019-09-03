@@ -1,0 +1,37 @@
+{% extends "OnlineFiveinaRow/base_profile_me.html" %}
+{% block content %}
+    <p class="title">My Profile</p>
+    <table>
+      <tr>
+        <td>
+          <form method="post" enctype="multipart/form-data">
+            {% if profile.picture %}
+              <img id="id_user_picture" src="{% url 'photo' profile.id %}" width="200px">
+            {% else %}
+              <img id="id_user_picture" src="/static/images/default_picture.png" width="200px">
+            {% endif %}
+            <br>
+            <input class="select_button" type="file" id="id_profile_picture" name="picture">
+            <div class="fake_button">Select File</div>
+            {% csrf_token %}
+            <button class="file_button" type="submit" id="id_update_profile_button">Submit</button>
+            <br>
+            <p class="text1">Number of Games: {{profile.game_sum}}</p>
+            <p class="text1">Win Rate: {{profile.win_sum}}/{{profile.game_sum}}</p>
+          </form>
+          <a href="{% url 'matchmaking' %}"><button class="link">Matchmaking</button></a>
+          <br>
+          <a href="{% url 'logout' %}"><button class="link">Logout</button></a>
+        </td>
+        <td>
+          <div class="recordarea">
+            <p class="text2">View Past Game Records:</p>
+            {% for record in all_record %}
+              <div><a class="text1" href="{% url 'rebuildgame' id=record.id%}">{{record.ending_time}}</a></div>
+              <br>
+            {% endfor %}
+          </div>  
+        </td>
+      </tr>
+    </table>
+{% endblock %}

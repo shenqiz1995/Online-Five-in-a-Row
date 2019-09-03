@@ -1,0 +1,31 @@
+{% extends "OnlineFiveinaRow/base_login_register.html" %}
+{% block content %}
+    <div class="frame">
+        <p class="title">Login</p>
+        {% for field in form.visible_fields %}
+            {% for error in field.errors %}
+                <p class="error">
+                    {{error}}
+                </p>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <p class="error">
+                {{ error }}
+            </p>
+        {% endfor %}
+        <form method="post" action="{% url 'login' %}">
+            <table>
+                {% for field in form.visible_fields %}
+                <tr>
+                    <td>{{field.label_tag}}</td>
+                    <td>{{field}}</td>
+                </tr>    
+                {% endfor %}
+            </table>
+            {% csrf_token %}
+            <button type="submit" id="id_login_button">Submit</button>
+        </form>
+        <p class="text1">Don't have an account?<br>Please <a class="link" href="{% url 'register' %}" id="id_register_link">register</a>.</p>
+    </div>
+{% endblock %}

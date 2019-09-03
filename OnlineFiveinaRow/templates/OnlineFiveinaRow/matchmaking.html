@@ -1,0 +1,42 @@
+{% extends "OnlineFiveinaRow/base_matchmaking.html" %}
+{% block content %}
+    <p class="title">Matchmaking</p>
+    <a href="{% url 'profile_me' %}"><button class="link">My Profile</button></a>
+    <br>
+    <a href="{% url 'logout' %}"><button class="link">Logout</button></a>
+    <p id="reminder">Please click on a chess piece to enter a room.</p>
+    <table>
+        {% for chessboard in chessboards %}
+            {% if chessboard.isFirstinaRow == True %}
+                <tr>
+            {% endif %}
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="board_id" value={{chessboard.board_id}}>
+                        {% if chessboard.user_id1 == 0 %}
+                            <button class="submit_button_up" type="submit" id="id_button_{{chessboard.board_id}}_1" name="position_id" value=1></button>
+                        {% else %}
+                            <button class="submit_button_up" type="submit" id="id_button_{{chessboard.board_id}}_1" name="position_id" value=1 disabled="true"></button>
+                        {% endif %}
+                        <input class="username" type="text" id="id_position_{{chessboard.board_id}}_1" value={{chessboard.username1}} readonly>
+                        <br>
+                        <img src="/static/images/chessboard.png" width="80px">
+                        <br>
+                        {% if chessboard.user_id2 == 0 %}
+                            <button class="submit_button_down" type="submit" id="id_button_{{chessboard.board_id}}_2" name="position_id" value=2></button>
+                        {% else %}
+                            <button class="submit_button_down" type="submit" id="id_button_{{chessboard.board_id}}_2" name="position_id" value=2 disabled="true"></button>
+                        {% endif %}
+                        <input class="username" type="text" id="id_position_{{chessboard.board_id}}_2" value={{chessboard.username2}} readonly>
+                    </form>
+                    <br>
+                    <br>
+                    <br>
+                </td>
+            {% if chessboard.isLastinaRow == True %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "OnlineFiveinaRow/base_game.html" %}
+{% block content %}
+
+   <div class="desc_char">Go back to <a href="{% url 'profile_me' %}">my Profile Page</a></div>
+   <br>
+	<div class="desc_char">Participants of the game: {{p_a}}     {{p_b}}.</div>
+   <div class="desc_char">Ending time: {{time}}</div>
+	<!-- <form method='POST' action="{% url 'playchess'%}"> -->
+   <br>
+
+   <script type="text/javascript">
+		var record_array = {{record_array}};
+  		rebuildboard();//调用js的函数
+   			// window.onload = function(){ 
+   			// for(i in record_array){
+   			// 	sleep(500);
+   			// 	rebuildcolor_test(record_array[i]);
+   			// } 
+   			
+
+   			// } 
+   			// $(window).load(function(){
+   		rebuildcolor();
+   			// })
+	</script>
+   <br>
+   <div class="desc_char">Go back to <a href="{% url 'profile_me' %}">my Profile Page</a></div>
+   <br><br>
+
+
+			<!-- {%csrf_token%} -->
+		<!-- </form> -->
+		<!-- <input type='hidden' name='currentchesscount' value='0'> -->
+		<!-- <button onclick='rebuildcolor_test({{record_array}})'>show process</button> -->
+{% endblock %}
